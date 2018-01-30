@@ -111,7 +111,7 @@
   transition: all 1s ease;
 }
 
-.test {
+.tweet-section:hover .icons i {
   opacity: 1;
 }
 
