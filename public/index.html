@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="vendor/normalize-4.1.1.css" type="text/css" />
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,700,700i" rel="stylesheet">
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <!-- App CSS -->
     <link rel="stylesheet" href="styles/layout.css" type="text/css" />
@@ -33,8 +35,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <div>
-        <section class="new-tweet">
+         <section class="new-tweet">
           <h2>Compose Tweet</h2>
           <form method="POST" action="/tweets/">
             <textarea name="text" placeholder="What are you humming about?"></textarea>
@@ -42,8 +43,29 @@
             <span class="character counter">140</span>
           </form>
         </section>
-      </div>
+    </main>
+    
+    <main id="tweet-container">
+      <header>
+        <img src="https://www.w3schools.com/w3images/avatar2.png" alt="avatar">
+        <h1>Gabe Pozo</h1>
+        <p>@Gabepozo</p>
+      </header>
+      
+      <article>
+        <p>blah blah blah text here blah blah blah</p>
+      </article>
+      
+      <footer>
+        <p>Published 10 days go</p>
+        <div class="icons">
+          <i class="fa fa-flag" aria-hidden="true"></i>
+          <i class="fa fa-retweet" aria-hidden="true"></i>
+          <i class="fa fa-heart" aria-hidden="true"></i>
+        </div>
+      </footer>
     </main>
 
+  <script src="scripts/composer-char-counter.js"></script>
   </body>
 </html>
