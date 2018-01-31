@@ -4,6 +4,7 @@
 	width: 100%;
 	border-radius: 5px;
 	padding: 0 2em;
+  display:;
 }
 
 .new-tweet h2 {
@@ -55,7 +56,7 @@
 }
 
 .error-container .second {
-  background: #33d9b2;
+  background: #ff7675;
 }
 
 .tweet-section {
