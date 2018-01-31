@@ -4,7 +4,7 @@
 	width: 100%;
 	border-radius: 5px;
 	padding: 0 2em;
-  display:;
+  /*display: none;*/
 }
 
 .new-tweet h2 {
@@ -33,7 +33,6 @@
 .error-container {
   display: flex;
   width: 100%;
-  /*background: black;*/
   margin-top: 50px;
   align-items: center;
   height: 50px;
@@ -51,6 +50,7 @@
   justify-content: center;
 }
 
+/*FIX AFTER LOL*/
 .error-container .first {
   background: #ff7675;
 }
@@ -144,4 +144,3 @@
 .tweet-section:hover .icons i {
   opacity: 1;
 }
-
