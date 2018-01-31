@@ -10,7 +10,7 @@ $(function() {
 		var $textLength = $textArea.val().length;
 		var $character = $(this).siblings('span');
 
-		if ($textLength !== 0 && $textLength <= 10) {
+		if ($textLength !== 0 && $textLength <= 140) {
 			$.ajax({	
 				url: '/tweets',
 				method: 'POST',
@@ -33,7 +33,7 @@ $(function() {
 			e.preventDefault();
 		}
 
-		if ($textLength > 10) {
+		if ($textLength > 140) {
 			e.preventDefault();
 			$('.new-tweet .second').css('opacity', 1);
 		} else {	
@@ -64,6 +64,12 @@ function renderTweet(data) {
 	}
 }
 
+function escape(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
 function createTweetElement(data) {
 	var template = 
 	`
@@ -75,7 +81,7 @@ function createTweetElement(data) {
 			</header>
 				
 			<div>
-				<p>${data.content['text']}</p>
+				<p>${escape(data.content['text'])}</p>
 			</div>
 				
 			<footer>
