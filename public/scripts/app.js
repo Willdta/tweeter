@@ -57,10 +57,18 @@ $(function() {
 		var $textLength = $textArea.val().length;
 
 		if ($textLength === 0) {
+			$('.new-tweet .first').css('opacity', 1);
+			e.preventDefault();
+		} else {
+			$('.new-tweet .first').css('opacity', 0);
 			e.preventDefault();
 		}
 
-		if ($textLength > 140) {
+		if ($textLength > 10) {
+			$('.new-tweet .second').css('opacity', 1);
+			e.preventDefault();
+		} else {
+			$('.new-tweet .second').css('opacity', 0);
 			e.preventDefault();
 		}
 	});
