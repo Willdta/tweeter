@@ -55,6 +55,7 @@ $(function() {
 	$('.new-tweet').on('click', '.tweetbutton', function(e) {
 		var $textArea = $(this).siblings('textarea');
 		var $textLength = $textArea.val().length;
+		var $character = $(this).siblings('span');
 
 		if ($textLength === 0) {
 			$('.new-tweet .first').css('opacity', 1);
@@ -81,6 +82,9 @@ $(function() {
 				loadTweets();
 			}
 		});
+
+		$character.text(140);
+		
 	});
 
 	function loadTweets() {
