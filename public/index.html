@@ -37,11 +37,15 @@
     <main class="container">
          <section class="new-tweet">
           <h2>Compose Tweet</h2>
-          <form method="POST" action="/tweets/">
+          <form class="composeForm" method="POST" action="/tweets">
             <textarea name="text" placeholder="What are you humming about?"></textarea>
             <input class="tweetbutton counter" type="submit" value="Tweet">
             <span class="character counter">140</span>
           </form>
+          <div class="error-container">
+            <p class="first error">not today fam</p>
+            <p class="second error">too long fam</p>
+          </div>
         </section>
     </main>
     
