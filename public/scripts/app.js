@@ -64,13 +64,23 @@ $(function() {
 			e.preventDefault();
 		}
 
-		if ($textLength > 10) {
+		if ($textLength > 140) {
 			$('.new-tweet .second').css('opacity', 1);
 			e.preventDefault();
 		} else {
 			$('.new-tweet .second').css('opacity', 0);
 			e.preventDefault();
 		}
+
+		$.ajax({
+			url: '/tweets',
+			method: 'POST',
+			data: $textArea.serialize(),
+			success: function(tweets) {
+				console.log('blah');
+				loadTweets();
+			}
+		});
 	});
 
 	function loadTweets() {
@@ -87,9 +97,11 @@ $(function() {
 });
 
 function renderTweet(data) {
+	$('#tweet-container').empty();
 	for (key of data) {
 		var $tweet = createTweetElement(key);
-		$('#tweet-container').append($tweet);
+		// $('#tweet-container').append($tweet);
+		$('#tweet-container').prepend($tweet);
 	}
 }
 
