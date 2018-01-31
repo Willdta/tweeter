@@ -64,6 +64,7 @@ function renderTweet(data) {
 	}
 }
 
+//Function for preventing XSS (Won't allow the user to type javascript)
 function escape(str) {
   var div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
