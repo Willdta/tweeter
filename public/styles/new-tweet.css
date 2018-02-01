@@ -88,7 +88,7 @@
   align-items: center;
   margin: 0 10px; }
   .tweet-section div p {
-    word-wrap: break-word; }
+    word-break: break-word; }
 .tweet-section footer {
   border-top: 1px solid black;
   height: 20%;

@@ -91,7 +91,7 @@ function createTweetElement(data) {
 			</header>
 				
 			<div>
-				<p>${escape(data.content['text'])}</p>
+				<p id="break">${escape(data.content['text'])}</p>
 			</div>
 				
 			<footer>
