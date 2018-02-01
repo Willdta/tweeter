@@ -1,33 +1,43 @@
 .new-tweet {
-	background: #eee;
-	height: 300px;
-	width: 100%;
-	border-radius: 5px;
-	padding: 0 2em;
-  /*display: none;*/
+  background: #eee;
+  height: 360px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 0 2em;
 }
 
 .new-tweet h2 {
-	border-bottom: 2px solid black;
-	margin-top: 5px;
+  border-bottom: 2px solid black;
+  margin-top: 5px;
+  padding-bottom: 5px
 }
 
 .new-tweet textarea {
-	width: 100%;
-	height: 75px;
-	margin-top: 20px;
+  width: 100%;
+  height: 150px;
+  margin-top: 20px;
+  max-height: 220px;
 }
 
 .new-tweet textarea::placeholder {
-	padding: 5px;
+  padding: 5px;
+}
+
+.new-tweet .tweetbutton {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background: white;
+  cursor: pointer;
 }
 
 .new-tweet .counter {
-	margin-top: 5px;
+  margin-top: 5px;
 }
 
 .new-tweet .character {
-	float: right;
+  float: right;
 }
 
 .error-container {
@@ -50,13 +60,12 @@
   justify-content: center;
 }
 
-/*FIX AFTER LOL*/
 .error-container .first {
   background: #ff7675;
 }
 
 .error-container .second {
-  background: #ff7675;
+  background: #ff7070;
 }
 
 .tweet-section {
@@ -81,8 +90,9 @@
 .tweet-section header {
   background: #eee;
   display: flex;
+  align-items: center;
   height: 30%;
-  position: relative;
+  /*  position: relative;*/
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -90,22 +100,20 @@
 .tweet-section header img {
   height: 100px;
   width: 100px;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
   margin-left: 20px;
   border-radius: 10px;
 }
 
 .tweet-section header h1 {
   margin-left: 10px;
-  margin-top: 10px;
+  width: 50%;
 }
 
 .tweet-section header p {
-  position: absolute;
-  right: 10px;
-  top: 20px
+  justify-content: flex-end;
+  display: flex;
+  margin-right: 20px;
+  width: 50%;
 }
 
 .tweet-section div {
@@ -143,4 +151,57 @@
 
 .tweet-section:hover .icons i {
   opacity: 1;
+}
+
+/*----- RESPONSIVE -----*/
+
+@media screen and (max-width: 620px) {
+
+  .new-tweet h2 {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .new-tweet textarea {
+    height: 170px;
+  }
+
+  .new-tweet textarea::placeholder {
+    text-align: center;
+  }
+
+  .new-tweet .tweetbutton {
+    width: 60px;
+  }
+
+  .tweet-section {
+    width: 300px;
+  }
+
+  .tweet-section header img {
+    width: 50px;
+    height: 50px
+  }
+
+  .tweet-section header h1 {
+    font-size: 18px;
+  }
+
+  .tweet-section header p {
+    font-size: 12px;
+  }
+
+  .tweet-section div p {
+    font-size: 12px
+  }
+
+  .tweet-section footer p {
+    text-align: center;
+    font-size: 12px
+  }
+
+  .icons i {
+    font-size: 15px;
+  }
 }
