@@ -1,30 +1,31 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+//document.ready
+$(function() {
 
-$(function() { 
+	//Listening for submit button click 
 	$('.new-tweet').on('click', '.tweetbutton', function(e) {
 		var $textArea = $(this).siblings('textarea');
 		var $textLength = $textArea.val().length;
 		var $character = $(this).siblings('span');
 
+		//Successful Verification
 		if ($textLength !== 0 && $textLength <= 140) {
+			
+			//POST tweets 
 			$.ajax({	
 				url: '/tweets',
 				method: 'POST',
 				data: $textArea.serialize(),
 				success: function(tweets) {
-					console.log('blah');
+					//On success GET tweets
 					loadTweets();
 				}
 			});		
-			
+			//Reset counter and text
 			$character.text(140);
 			$textArea.val('');
 		}
 
+		//Prevent form submission
 		if ($textLength === 0) {
 			$('.new-tweet .first').css('opacity', 1);
 			e.preventDefault();
@@ -42,6 +43,7 @@ $(function() {
 		}
 	});
 
+	//Fetch tweets with Ajax
 	function loadTweets() {
 		$.ajax({
 			url: '/tweets',
@@ -52,12 +54,18 @@ $(function() {
 			}
 		});
 	}
+
+	//Load brebuilt tweets
 	loadTweets();
 });
 
+//Renders multiple tweets
 function renderTweet(data) {
+	
+	//Remove duplicates
 	$('#tweet-container').empty();
 	
+	//Loop through each tweet
 	for (key of data) {
 		var $tweet = createTweetElement(key);
 		$('#tweet-container').prepend($tweet);
@@ -71,6 +79,7 @@ function escape(str) {
   return div.innerHTML;
 }
 
+//Here we are creating a function that makes a newly generated template for each tweet
 function createTweetElement(data) {
 	var template = 
 	`
