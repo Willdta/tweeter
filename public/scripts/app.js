@@ -57,7 +57,7 @@ $(function() {
 		});
 	}
 
-	//Load pre-built tweets
+	//Load tweets
 	loadTweets();
 });
 
