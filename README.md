@@ -24,4 +24,4 @@ Tweeter is a simple, single-page Twitter clone. Using HTML, CSS/SASS, AJAX and J
 
 ## Dev Dependencies
 
--Nodemon
+- Nodemon
