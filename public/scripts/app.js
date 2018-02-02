@@ -16,10 +16,12 @@ $(function() {
 				method: 'POST',
 				data: $textArea.serialize(),
 				success: function(tweets) {
+					
 					//On success GET tweets
 					loadTweets();
 				}
 			});		
+			
 			//Reset counter and text
 			$character.text(140);
 			$textArea.val('');
@@ -55,7 +57,7 @@ $(function() {
 		});
 	}
 
-	//Load brebuilt tweets
+	//Load pre-built tweets
 	loadTweets();
 });
 
