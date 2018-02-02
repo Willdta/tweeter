@@ -1,7 +1,9 @@
 //SASS VERSION
 
+@import 'variables.sass'
+
 .new-tweet 
-	background: #eee
+	background: $lightGrey
 	height: 360px
 	width: 100%
 	border-radius: 10px
@@ -57,10 +59,10 @@
 		justify-content: center
 		
 	.first 
-		background: #ff7675
+		background: $error-one
 		
 	.second 
-		background: #ff7070
+		background: $error-two
 
 .tweet-section 
 	position: relative
@@ -80,7 +82,7 @@
 		opacity: 1
 
 	header 
-		background: #eee
+		background: $lightGrey
 		display: flex
 		align-items: center
 		height: 30%
@@ -130,7 +132,7 @@
 	
 	i 
 		padding: 0 5px
-		color: #00a087
+		color: $social
 		font-size: 20px
 		opacity: 0
 		transition: all 1s ease
