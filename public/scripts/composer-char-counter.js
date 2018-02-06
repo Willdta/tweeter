@@ -1,6 +1,6 @@
 //Character counter function
 $(function() {
-  $('.new-tweet').on('keyup', 'button', function() {
+  $('.new-tweet').on('keyup', 'textarea', function() {
     var maxCharacters = 140;
     var currentCharacters = $(this).val().length;
    
